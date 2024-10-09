@@ -50,13 +50,13 @@
 
               <div class="form-group">
                 <label for="income_sources">What are your income sources?</label>
-                <select class="form-control shadow-none" id="income_sources" name="income_sources" required>
-                  <option value="" disabled selected>Select your income source</option>
+                <select class="form-control shadow-none" id="income_sources" name="income_sources" multiple required>
                   <option value="salary">Salary</option>
                   <option value="business">Business</option>
                   <option value="investments">Investments</option>
                   <option value="other">Other</option>
                 </select>
+                <small class="form-text text-muted">Hold Ctrl (Windows) or Command (Mac) to select multiple options.</small>
               </div>
 
               <div class="form-group">
@@ -71,13 +71,17 @@
               </div>
 
               <div class="form-group">
-                <label for="consultation">Would you consider online or remote consultation?</label>
-                <select class="form-control shadow-none" id="consultation" name="consultation" required>
-                  <option value="" disabled selected>Select an option</option>
-                  <option value="yes">Yes</option>
-                  <option value="no">No</option>
-                  <option value="maybe">Maybe</option>
+                <label for="contact_method">Preferred Contact Method</label>
+                <select class="form-control shadow-none" id="contact_method" name="contact_method" required>
+                  <option value="" disabled selected>Select your preference</option>
+                  <option value="email">Email</option>
+                  <option value="phone">Phone</option>
                 </select>
+              </div>
+
+              <div class="form-group" id="contact_info">
+                <label for="contact_value">Your Email or Phone</label>
+                <input class="form-control shadow-none" id="contact_value" name="contact_value" type="text" placeholder="Enter your email or phone" required />
               </div>
 
               <button class="btn btn-primary w-100" type="submit" aria-label="Submit Services Request">
