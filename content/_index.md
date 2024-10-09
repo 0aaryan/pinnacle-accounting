@@ -3,8 +3,8 @@
 banner:
   # title: "Streamline your finances with our professional assistance"
   title: "EXPERT ACCOUNTING SERVICES FOR YOUR BUSINESS"
-  button: "Get Started Today"
-  button_link: "#contact"
+  button: "Book Free Consultation"
+  button_link: "/contact"
   image: "images/banner.png"
 
 # brands
