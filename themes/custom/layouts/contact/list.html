@@ -30,44 +30,84 @@
               <div class="mb-4">
                 <h3>Send A Message</h3>
               </div>
-              <form id="contact-form" action="{{ . }}" method="POST">
-                <p id="form-status" class="form-status"></p>
-                <div class="form-group">
-                  <label for="name">Full Name</label>
-                  <input
-                    class="form-control shadow-none"
-                    id="name"
-                    name="full_name"
-                    type="text"
-                    placeholder="Full Name"
-                    required />
-                </div>
-                <div class="form-group">
-                  <label for="email">Email Address</label>
-                  <input
-                    class="form-control shadow-none"
-                    id="email"
-                    name="email"
-                    type="email"
-                    placeholder="Email Address"
-                    required />
-                </div>
-                <div class="form-group">
-                  <label for="message">Your Message</label>
-                  <textarea
-                    class="form-control shadow-none h-auto"
-                    id="message"
-                    name="Comment"
-                    required></textarea>
-                </div>
+              <form id="services-form" action="{{ . }}" method="POST">
+    <p id="form-status" class="form-status"></p>
+    
+    <div class="form-group">
+        <label for="services">Which services are you interested in?</label>
+        <select class="form-control shadow-none" id="services" name="services" required>
+            <option value="" disabled selected>Select a service</option>
+            <option value="tax_preparation">Tax Preparation</option>
+            <option value="financial_advisory">Financial Advisory</option>
+            <option value="accounting">Accounting</option>
+            <option value="other">Other</option>
+        </select>
+    </div>
 
-                <button
-                  class="btn btn-primary w-100"
-                  type="submit"
-                  aria-label="Send Message">
-                  Send Message
-                </button>
-              </form>
+    <div class="form-group">
+        <label for="requirement">What is your requirement for?</label>
+        <select class="form-control shadow-none" id="requirement" name="requirement" required>
+            <option value="" disabled selected>Select an option</option>
+            <option value="personal">Personal</option>
+            <option value="business">Business</option>
+            <option value="non_government">Non-Government</option>
+            <option value="charity_organization">Charity Organization</option>
+            <option value="residential_society">Residential Society</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="annual_income">What is your annual income before tax?</label>
+        <select class="form-control shadow-none" id="annual_income" name="annual_income" required>
+            <option value="" disabled selected>Select your income range</option>
+            <option value="less_than_2.5_lakhs">Less than Rs 2.5 Lakhs</option>
+            <option value="2.5_to_4.9_lakhs">Rs 2.5 - 4.9 Lakhs</option>
+            <option value="5_to_10_lakhs">Rs 5 - 10 Lakhs</option>
+            <option value="10_to_50_lakhs">Rs 10 - 50 Lakhs</option>
+            <option value="more_than_50_lakhs">More than Rs 50 Lakhs</option>
+            <option value="prefer_not_to_say">Prefer not to say</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="income_sources">What are your income sources?</label>
+        <input
+            class="form-control shadow-none"
+            id="income_sources"
+            name="income_sources"
+            type="text"
+            placeholder="e.g., salary, business, investments"
+            required />
+    </div>
+
+    <div class="form-group">
+        <label for="time_frame">How soon would you like tax preparation done?</label>
+        <select class="form-control shadow-none" id="time_frame" name="time_frame" required>
+            <option value="" disabled selected>Select a timeframe</option>
+            <option value="asap">ASAP</option>
+            <option value="next_week">In the next week</option>
+            <option value="next_month">In the next month</option>
+            <option value="flexible">Flexible</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="consultation">Would you consider online or remote consultation?</label>
+        <select class="form-control shadow-none" id="consultation" name="consultation" required>
+            <option value="" disabled selected>Select an option</option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+            <option value="maybe">Maybe</option>
+        </select>
+    </div>
+
+    <button
+        class="btn btn-primary w-100"
+        type="submit"
+        aria-label="Submit Services Request">
+        Submit Request
+    </button>
+</form>
             </div>
           </div>
 
