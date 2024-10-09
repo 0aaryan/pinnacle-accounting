@@ -306,28 +306,15 @@
           </div>
 
           <div class="row justify-content-center align-items-center no-gutters">
-            <div
-              class="col-xl-4 col-md-3 d-none d-lg-block"
-              data-aos="fade-up"
-              data-aos-delay="50">
+            <div class="col-xl-4 col-md-3 d-none d-lg-block" data-aos="fade-up" data-aos-delay="50">
               {{ if fileExists (add `assets/` .image_left) }}
-                {{ $image_left:= resources.Get .image_left }}
-                {{ $image_left:= $image_left.Resize "445x" }}
-                <img
-                  loading="lazy"
-                  decoding="async"
-                  class="img-fluid"
-                  width="{{ $image_left.Width }}"
-                  height="{{ $image_left.Height }}"
-                  src="{{ $image_left.RelPermalink }}"
-                  alt="testimonials"
-                  onerror="this.onerror=null;this.src='{{ $image_left.RelPermalink }}'" />
+                {{ $image_left := resources.Get .image_left }}
+                {{ $image_left := $image_left.Resize "445x" }}
+                <img loading="lazy" decoding="async" class="img-fluid" width="{{ $image_left.Width }}" height="{{ $image_left.Height }}" src="{{ $image_left.RelPermalink }}" alt="testimonials" onerror="this.onerror=null;this.src='{{ $image_left.RelPermalink }}'" />
               {{ end }}
             </div>
 
-            <div
-              class="col-xl-4 col-lg-5 col-md-8 col-sm-10"
-              data-aos="fade-up">
+            <div class="col-xl-4 col-lg-5 col-md-8 col-sm-10" data-aos="fade-up">
               <div class="testimonial-carousel swiper">
                 <div class="swiper-wrapper mb-3">
                   {{ range .testimonials_quotes }}
@@ -335,20 +322,24 @@
                       <div class="block">
                         <i class="quote-icon las la-quote-left"></i>
                         <p class="quote-text">{{ .quote }}</p>
+                        
+                        <!-- Star Rating -->
+                        <div class="star-rating">
+                          {{ $rating := randInt 1 6 }} <!-- Generates a random integer between 1 and 5 -->
+                          {{ range (seq 1 $rating) }}
+                            <i class="las la-star"></i> <!-- Star icon -->
+                          {{ end }}
+                          {{ range (seq $rating 5) }}
+                            <i class="las la-star" style="opacity: 0.3;"></i> <!-- Empty star icon -->
+                          {{ end }}
+                        </div>
+
                         <span class="author">
                           {{ if fileExists (add `assets/` .image) }}
-                            {{ $img:= resources.Get .image }}
-                            {{ $img:= $img.Resize "90x " }}
-                            {{ $imgWebp:= $img.Resize "90x webp" }}
-                            <img
-                              loading="lazy"
-                              decoding="async"
-                              class="rounded-circle"
-                              width="{{ $img.Width }}"
-                              height="{{ $img.Height }}"
-                              src="{{ $imgWebp.RelPermalink }}"
-                              alt="Video Thumbnail"
-                              onerror="this.onerror=null;this.src='{{ $img.RelPermalink }}'" />
+                            {{ $img := resources.Get .image }}
+                            {{ $img := $img.Resize "90x" }}
+                            {{ $imgWebp := $img.Resize "90x webp" }}
+                            <img loading="lazy" decoding="async" class="rounded-circle" width="{{ $img.Width }}" height="{{ $img.Height }}" src="{{ $imgWebp.RelPermalink }}" alt="Video Thumbnail" onerror="this.onerror=null;this.src='{{ $img.RelPermalink }}'" />
                           {{ end }}
                           <h5>{{ .name | markdownify }}</h5>
                           <p>{{ .designation | markdownify }}</p>
@@ -362,22 +353,11 @@
               </div>
             </div>
 
-            <div
-              class="col-xl-4 col-md-3 d-none d-lg-block"
-              data-aos="fade-up"
-              data-aos-delay="150">
+            <div class="col-xl-4 col-md-3 d-none d-lg-block" data-aos="fade-up" data-aos-delay="150">
               {{ if fileExists (add `assets/` .image_right) }}
-                {{ $img:= resources.Get .image_right }}
-                {{ $img:= $img.Resize "445x" }}
-                <img
-                  loading="lazy"
-                  decoding="async"
-                  class="img-fluid"
-                  width="{{ $img.Width }}"
-                  height="{{ $img.Height }}"
-                  src="{{ $img.RelPermalink }}"
-                  alt="testimonials"
-                  onerror="this.onerror=null;this.src='{{ $img.RelPermalink }}'" />
+                {{ $img := resources.Get .image_right }}
+                {{ $img := $img.Resize "445x" }}
+                <img loading="lazy" decoding="async" class="img-fluid" width="{{ $img.Width }}" height="{{ $img.Height }}" src="{{ $img.RelPermalink }}" alt="testimonials" onerror="this.onerror=null;this.src='{{ $img.RelPermalink }}'" />
               {{ end }}
             </div>
           </div>
