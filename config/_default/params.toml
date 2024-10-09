@@ -38,12 +38,12 @@ preloader = "images/favicon.png" # use jpg, png, svg or gif format.
 # Navigation button
 [navigation_button]
 enable = true
-label = "Get Started Today"
-link = "https://gethugothemes.com/products/andromeda/"
+label = "Book Free Consultation"
+link = "/contact"
 
 # contact information
 [contact_info]
-address = "Sirsa, Haryana, India"
+address = "Delhi, India"
 phone = ["+91 9467362705"]
 email = ["team@pinnacleaccountingservices.in"]
 
