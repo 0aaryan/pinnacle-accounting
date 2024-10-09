@@ -122,7 +122,7 @@ testimonials:
       image: "images/user-img/07.jpg"
     - quote: "Very helpful and genuine. He explained everything clearly and was patient throughout."
       name: "Ganeshsurya"
-      designation: "Accountant"
+      designation: "Software Developer"
       image: "images/user-img/08.jpg"
     - quote: "Great experience. Jay is professional and listens to your concerns carefully before providing solutions."
       name: "Shashikant"
