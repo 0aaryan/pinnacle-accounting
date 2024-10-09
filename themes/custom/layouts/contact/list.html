@@ -10,83 +10,91 @@
               <h3>Send A Message</h3>
             </div>
             <form id="services-form" action="{{ . }}" method="POST">
-              <p id="form-status" class="form-status"></p>
-              
-              <div class="form-group">
-                <label for="services">Which services are you interested in?</label>
-                <select class="form-control shadow-none" id="services" name="services" required>
-                  <option value="" disabled selected>Select a service</option>
-                  <option value="tax_preparation">Tax Preparation</option>
-                  <option value="financial_advisory">Financial Advisory</option>
-                  <option value="accounting">Accounting</option>
-                  <option value="other">Other</option>
-                </select>
+              <div id="form-step-1">
+                <div class="form-group">
+                  <label for="services">Which services are you interested in?</label>
+                  <select class="form-control shadow-none" id="services" name="services" required>
+                    <option value="" disabled selected>Select a service</option>
+                    <option value="tax_preparation">Tax Preparation</option>
+                    <option value="financial_advisory">Financial Advisory</option>
+                    <option value="accounting">Accounting</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="requirement">What is your requirement for?</label>
+                  <select class="form-control shadow-none" id="requirement" name="requirement" required>
+                    <option value="" disabled selected>Select an option</option>
+                    <option value="personal">Personal</option>
+                    <option value="business">Business</option>
+                    <option value="non_government">Non-Government</option>
+                    <option value="charity_organization">Charity Organization</option>
+                    <option value="residential_society">Residential Society</option>
+                  </select>
+                </div>
+
+                <button type="button" class="btn btn-primary" id="continue-to-step-2">Continue</button>
               </div>
 
-              <div class="form-group">
-                <label for="requirement">What is your requirement for?</label>
-                <select class="form-control shadow-none" id="requirement" name="requirement" required>
-                  <option value="" disabled selected>Select an option</option>
-                  <option value="personal">Personal</option>
-                  <option value="business">Business</option>
-                  <option value="non_government">Non-Government</option>
-                  <option value="charity_organization">Charity Organization</option>
-                  <option value="residential_society">Residential Society</option>
-                </select>
+              <div id="form-step-2" style="display: none;">
+                <div class="form-group">
+                  <label for="annual_income">What is your annual income before tax?</label>
+                  <select class="form-control shadow-none" id="annual_income" name="annual_income" required>
+                    <option value="" disabled selected>Select your income range</option>
+                    <option value="less_than_2.5_lakhs">Less than Rs 2.5 Lakhs</option>
+                    <option value="2.5_to_4.9_lakhs">Rs 2.5 - 4.9 Lakhs</option>
+                    <option value="5_to_10_lakhs">Rs 5 - 10 Lakhs</option>
+                    <option value="10_to_50_lakhs">Rs 10 - 50 Lakhs</option>
+                    <option value="more_than_50_lakhs">More than Rs 50 Lakhs</option>
+                    <option value="prefer_not_to_say">Prefer not to say</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="income_sources">What are your income sources?</label>
+                  <select class="form-control shadow-none" id="income_sources" name="income_sources" multiple required>
+                    <option value="salary">Salary</option>
+                    <option value="business">Business</option>
+                    <option value="investments">Investments</option>
+                    <option value="other">Other</option>
+                  </select>
+                  <small class="form-text text-muted">Hold Ctrl (Windows) or Command (Mac) to select multiple options.</small>
+                </div>
+
+                <button type="button" class="btn btn-secondary" id="back-to-step-1">Back</button>
+                <button type="button" class="btn btn-primary" id="continue-to-step-3">Continue</button>
               </div>
 
-              <div class="form-group">
-                <label for="annual_income">What is your annual income before tax?</label>
-                <select class="form-control shadow-none" id="annual_income" name="annual_income" required>
-                  <option value="" disabled selected>Select your income range</option>
-                  <option value="less_than_2.5_lakhs">Less than Rs 2.5 Lakhs</option>
-                  <option value="2.5_to_4.9_lakhs">Rs 2.5 - 4.9 Lakhs</option>
-                  <option value="5_to_10_lakhs">Rs 5 - 10 Lakhs</option>
-                  <option value="10_to_50_lakhs">Rs 10 - 50 Lakhs</option>
-                  <option value="more_than_50_lakhs">More than Rs 50 Lakhs</option>
-                  <option value="prefer_not_to_say">Prefer not to say</option>
-                </select>
-              </div>
+              <div id="form-step-3" style="display: none;">
+                <div class="form-group">
+                  <label for="time_frame">How soon would you like tax preparation done?</label>
+                  <select class="form-control shadow-none" id="time_frame" name="time_frame" required>
+                    <option value="" disabled selected>Select a timeframe</option>
+                    <option value="asap">ASAP</option>
+                    <option value="next_week">In the next week</option>
+                    <option value="next_month">In the next month</option>
+                    <option value="flexible">Flexible</option>
+                  </select>
+                </div>
 
-              <div class="form-group">
-                <label for="income_sources">What are your income sources?</label>
-                <select class="form-control shadow-none" id="income_sources" name="income_sources" multiple required>
-                  <option value="salary">Salary</option>
-                  <option value="business">Business</option>
-                  <option value="investments">Investments</option>
-                  <option value="other">Other</option>
-                </select>
-                <small class="form-text text-muted">Hold Ctrl (Windows) or Command (Mac) to select multiple options.</small>
-              </div>
+                <div class="form-group">
+                  <label for="contact_method">Preferred Contact Method</label>
+                  <select class="form-control shadow-none" id="contact_method" name="contact_method" required>
+                    <option value="" disabled selected>Select your preference</option>
+                    <option value="email">Email</option>
+                    <option value="phone">Phone</option>
+                  </select>
+                </div>
 
-              <div class="form-group">
-                <label for="time_frame">How soon would you like tax preparation done?</label>
-                <select class="form-control shadow-none" id="time_frame" name="time_frame" required>
-                  <option value="" disabled selected>Select a timeframe</option>
-                  <option value="asap">ASAP</option>
-                  <option value="next_week">In the next week</option>
-                  <option value="next_month">In the next month</option>
-                  <option value="flexible">Flexible</option>
-                </select>
-              </div>
+                <div class="form-group" id="contact_info">
+                  <label for="contact_value">Your Email or Phone</label>
+                  <input class="form-control shadow-none" id="contact_value" name="contact_value" type="text" placeholder="Enter your email or phone" required />
+                </div>
 
-              <div class="form-group">
-                <label for="contact_method">Preferred Contact Method</label>
-                <select class="form-control shadow-none" id="contact_method" name="contact_method" required>
-                  <option value="" disabled selected>Select your preference</option>
-                  <option value="email">Email</option>
-                  <option value="phone">Phone</option>
-                </select>
+                <button type="button" class="btn btn-secondary" id="back-to-step-2">Back</button>
+                <button class="btn btn-primary w-100" type="submit">Submit Request</button>
               </div>
-
-              <div class="form-group" id="contact_info">
-                <label for="contact_value">Your Email or Phone</label>
-                <input class="form-control shadow-none" id="contact_value" name="contact_value" type="text" placeholder="Enter your email or phone" required />
-              </div>
-
-              <button class="btn btn-primary w-100" type="submit" aria-label="Submit Services Request">
-                Submit Request
-              </button>
             </form>
           </div>
         </div>
@@ -164,4 +172,26 @@
       </div>
     </div>
   </section>
+
+  <script>
+    document.getElementById('continue-to-step-2').onclick = function() {
+      document.getElementById('form-step-1').style.display = 'none';
+      document.getElementById('form-step-2').style.display = 'block';
+    };
+
+    document.getElementById('back-to-step-1').onclick = function() {
+      document.getElementById('form-step-1').style.display = 'block';
+      document.getElementById('form-step-2').style.display = 'none';
+    };
+
+    document.getElementById('continue-to-step-3').onclick = function() {
+      document.getElementById('form-step-2').style.display = 'none';
+      document.getElementById('form-step-3').style.display = 'block';
+    };
+
+    document.getElementById('back-to-step-2').onclick = function() {
+      document.getElementById('form-step-2').style.display = 'block';
+      document.getElementById('form-step-3').style.display = 'none';
+    };
+  </script>
 {{ end }}
