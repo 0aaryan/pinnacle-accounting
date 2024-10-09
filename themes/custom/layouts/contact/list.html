@@ -12,26 +12,47 @@
             <form id="services-form" action="{{ . }}" method="POST">
               <div id="form-step-1">
                 <div class="form-group">
-                  <label for="services">Which services are you interested in?</label>
-                  <select class="form-control shadow-none" id="services" name="services" required>
-                    <option value="" disabled selected>Select a service</option>
-                    <option value="tax_preparation">Tax Preparation</option>
-                    <option value="financial_advisory">Financial Advisory</option>
-                    <option value="accounting">Accounting</option>
-                    <option value="other">Other</option>
-                  </select>
+                  <label>Which services are you interested in?</label>
+                  <div>
+                    <input type="radio" id="tax_preparation" name="services" value="tax_preparation" required>
+                    <label for="tax_preparation">Tax Preparation</label>
+                  </div>
+                  <div>
+                    <input type="radio" id="financial_advisory" name="services" value="financial_advisory">
+                    <label for="financial_advisory">Financial Advisory</label>
+                  </div>
+                  <div>
+                    <input type="radio" id="accounting" name="services" value="accounting">
+                    <label for="accounting">Accounting</label>
+                  </div>
+                  <div>
+                    <input type="radio" id="other" name="services" value="other">
+                    <label for="other">Other</label>
+                  </div>
                 </div>
 
                 <div class="form-group">
-                  <label for="requirement">What is your requirement for?</label>
-                  <select class="form-control shadow-none" id="requirement" name="requirement" required>
-                    <option value="" disabled selected>Select an option</option>
-                    <option value="personal">Personal</option>
-                    <option value="business">Business</option>
-                    <option value="non_government">Non-Government</option>
-                    <option value="charity_organization">Charity Organization</option>
-                    <option value="residential_society">Residential Society</option>
-                  </select>
+                  <label>What is your requirement for?</label>
+                  <div>
+                    <input type="radio" id="personal" name="requirement" value="personal" required>
+                    <label for="personal">Personal</label>
+                  </div>
+                  <div>
+                    <input type="radio" id="business" name="requirement" value="business">
+                    <label for="business">Business</label>
+                  </div>
+                  <div>
+                    <input type="radio" id="non_government" name="requirement" value="non_government">
+                    <label for="non_government">Non-Government</label>
+                  </div>
+                  <div>
+                    <input type="radio" id="charity_organization" name="requirement" value="charity_organization">
+                    <label for="charity_organization">Charity Organization</label>
+                  </div>
+                  <div>
+                    <input type="radio" id="residential_society" name="requirement" value="residential_society">
+                    <label for="residential_society">Residential Society</label>
+                  </div>
                 </div>
 
                 <button type="button" class="btn btn-primary" id="continue-to-step-2">Continue</button>
@@ -39,27 +60,51 @@
 
               <div id="form-step-2" style="display: none;">
                 <div class="form-group">
-                  <label for="annual_income">What is your annual income before tax?</label>
-                  <select class="form-control shadow-none" id="annual_income" name="annual_income" required>
-                    <option value="" disabled selected>Select your income range</option>
-                    <option value="less_than_2.5_lakhs">Less than Rs 2.5 Lakhs</option>
-                    <option value="2.5_to_4.9_lakhs">Rs 2.5 - 4.9 Lakhs</option>
-                    <option value="5_to_10_lakhs">Rs 5 - 10 Lakhs</option>
-                    <option value="10_to_50_lakhs">Rs 10 - 50 Lakhs</option>
-                    <option value="more_than_50_lakhs">More than Rs 50 Lakhs</option>
-                    <option value="prefer_not_to_say">Prefer not to say</option>
-                  </select>
+                  <label>What is your annual income before tax?</label>
+                  <div>
+                    <input type="radio" id="less_than_2.5_lakhs" name="annual_income" value="less_than_2.5_lakhs" required>
+                    <label for="less_than_2.5_lakhs">Less than Rs 2.5 Lakhs</label>
+                  </div>
+                  <div>
+                    <input type="radio" id="2.5_to_4.9_lakhs" name="annual_income" value="2.5_to_4.9_lakhs">
+                    <label for="2.5_to_4.9_lakhs">Rs 2.5 - 4.9 Lakhs</label>
+                  </div>
+                  <div>
+                    <input type="radio" id="5_to_10_lakhs" name="annual_income" value="5_to_10_lakhs">
+                    <label for="5_to_10_lakhs">Rs 5 - 10 Lakhs</label>
+                  </div>
+                  <div>
+                    <input type="radio" id="10_to_50_lakhs" name="annual_income" value="10_to_50_lakhs">
+                    <label for="10_to_50_lakhs">Rs 10 - 50 Lakhs</label>
+                  </div>
+                  <div>
+                    <input type="radio" id="more_than_50_lakhs" name="annual_income" value="more_than_50_lakhs">
+                    <label for="more_than_50_lakhs">More than Rs 50 Lakhs</label>
+                  </div>
+                  <div>
+                    <input type="radio" id="prefer_not_to_say" name="annual_income" value="prefer_not_to_say">
+                    <label for="prefer_not_to_say">Prefer not to say</label>
+                  </div>
                 </div>
 
                 <div class="form-group">
-                  <label for="income_sources">What are your income sources?</label>
-                  <select class="form-control shadow-none" id="income_sources" name="income_sources" multiple required>
-                    <option value="salary">Salary</option>
-                    <option value="business">Business</option>
-                    <option value="investments">Investments</option>
-                    <option value="other">Other</option>
-                  </select>
-                  <small class="form-text text-muted">Hold Ctrl (Windows) or Command (Mac) to select multiple options.</small>
+                  <label>What are your income sources?</label>
+                  <div>
+                    <input type="checkbox" id="salary" name="income_sources" value="salary">
+                    <label for="salary">Salary</label>
+                  </div>
+                  <div>
+                    <input type="checkbox" id="business" name="income_sources" value="business">
+                    <label for="business">Business</label>
+                  </div>
+                  <div>
+                    <input type="checkbox" id="investments" name="income_sources" value="investments">
+                    <label for="investments">Investments</label>
+                  </div>
+                  <div>
+                    <input type="checkbox" id="other_sources" name="income_sources" value="other">
+                    <label for="other_sources">Other</label>
+                  </div>
                 </div>
 
                 <button type="button" class="btn btn-secondary" id="back-to-step-1">Back</button>
@@ -68,23 +113,35 @@
 
               <div id="form-step-3" style="display: none;">
                 <div class="form-group">
-                  <label for="time_frame">How soon would you like tax preparation done?</label>
-                  <select class="form-control shadow-none" id="time_frame" name="time_frame" required>
-                    <option value="" disabled selected>Select a timeframe</option>
-                    <option value="asap">ASAP</option>
-                    <option value="next_week">In the next week</option>
-                    <option value="next_month">In the next month</option>
-                    <option value="flexible">Flexible</option>
-                  </select>
+                  <label>How soon would you like tax preparation done?</label>
+                  <div>
+                    <input type="radio" id="asap" name="time_frame" value="asap" required>
+                    <label for="asap">ASAP</label>
+                  </div>
+                  <div>
+                    <input type="radio" id="next_week" name="time_frame" value="next_week">
+                    <label for="next_week">In the next week</label>
+                  </div>
+                  <div>
+                    <input type="radio" id="next_month" name="time_frame" value="next_month">
+                    <label for="next_month">In the next month</label>
+                  </div>
+                  <div>
+                    <input type="radio" id="flexible" name="time_frame" value="flexible">
+                    <label for="flexible">Flexible</label>
+                  </div>
                 </div>
 
                 <div class="form-group">
-                  <label for="contact_method">Preferred Contact Method</label>
-                  <select class="form-control shadow-none" id="contact_method" name="contact_method" required>
-                    <option value="" disabled selected>Select your preference</option>
-                    <option value="email">Email</option>
-                    <option value="phone">Phone</option>
-                  </select>
+                  <label>Preferred Contact Method</label>
+                  <div>
+                    <input type="radio" id="email" name="contact_method" value="email" required>
+                    <label for="email">Email</label>
+                  </div>
+                  <div>
+                    <input type="radio" id="phone" name="contact_method" value="phone">
+                    <label for="phone">Phone</label>
+                  </div>
                 </div>
 
                 <div class="form-group" id="contact_info">
