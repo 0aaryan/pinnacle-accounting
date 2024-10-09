@@ -50,14 +50,14 @@ about_video:
 
 # brands
 brands_carousel:
-  enable: true
+  enable: false
   subtitle: "Our Clients"
   title: "Trusted by Thousands Companies"
   section: "/" # brand images comming from _index.md
 
 # our team
 our_team:
-  enable: true
+  enable: false
   subtitle: "Our Team"
   title: "The People Behind PINNACLE"
   description: "Our team is led by Jay Sharma, who brings a wealth of experience in accounting and finance to help businesses navigate their financial challenges with confidence."
@@ -68,7 +68,7 @@ our_team:
 
 # our office
 our_office:
-  enable: true
+  enable: false
   subtitle: "Our Office"
   title: "Serving You From Sirsa, Haryana"
   description: "We are proud to operate from our office in Sirsa, Haryana, providing top-tier accounting services to clients locally and remotely."
