@@ -327,7 +327,7 @@
                         
                         <!-- Star Rating -->
                         <div class="star-rating">
-                          {{ $rating := randInt 1 6 }} <!-- Generates a random integer between 1 and 5 -->
+                          {{ $rating := 5}} <!-- Generates a random integer between 1 and 5 -->
                           {{ range (seq 1 $rating) }}
                             <i class="las la-star"></i> <!-- Star icon -->
                           {{ end }}
