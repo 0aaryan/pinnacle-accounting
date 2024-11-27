@@ -104,15 +104,20 @@
               </div>
             
               <div class="form-group">
-                <label for="email" class="h4 text-primary">Your Email (required)</label>
+                <label for="name" class="h4 text-primary">Your Name</label>
+                <input class="form-control shadow-none" id="name" name="name" type="name" placeholder="Enter your name" required />
+              </div>
+
+              <div class="form-group">
+                <label for="email" class="h4 text-primary">Your Email</label>
                 <input class="form-control shadow-none" id="email" name="email" type="email" placeholder="Enter your email" required />
               </div>
-            
+
               <div class="form-group">
                 <label for="phone" class="h4 text-primary">Your Phone (optional)</label>
                 <input class="form-control shadow-none" id="phone" name="phone" type="tel" placeholder="Enter your phone" pattern="^\d{10}$" />
               </div>
-            
+
               <button class="btn btn-primary w-100" type="button" onclick="submitForm()">Submit Request</button>
             </form>
             <script>
@@ -120,7 +125,7 @@
               // Collect form data, including multiple checkbox values
               const form = document.getElementById("services-form");
               const formData = new FormData(form);
-            
+
               // Collect income sources as comma-separated values
               const incomeSources = [];
               document.querySelectorAll('input[name="income_sources"]:checked').forEach(checkbox => {
@@ -136,6 +141,7 @@
               .then(response => response.text())
               .then(data => {
                 console.log("Form submitted:", data);
+               // console.log(new URLSearchParams(formData));
                 alert("Thank you for your submission!");
                 window.history.back();  // Redirect back to the previous page
               })
@@ -144,8 +150,7 @@
                 alert("There was an error submitting the form. Please try again.");
               });
             }
-          </script>            
-            
+          </script>
           </div>
         </div>
       </div>
