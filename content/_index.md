@@ -5,7 +5,7 @@ banner:
   title: "EXPERT ACCOUNTING SERVICES FOR YOUR BUSINESS"
   button: "Book Free Consultation"
   button_link: "/contact"
-  image: "images/banner.png"
+  image: "images/banner-3.jpg"
 
 # brands
 brands_carousel:
